@@ -38,4 +38,7 @@ export class User {
 
   @OneToOne(() => Carrier, (carrier) => carrier.user)
   carrier: Carrier;
+
+  @Column()
+  user_image: string;
 }
