@@ -31,7 +31,7 @@ async findAvailableCarrier (searchService: SearchServiceDto) {
         const carrierDetails = []
         for (let i=0; i < availableCarrier.length; i++){
             const element = await this.userRepository.find({
-                select: { user_name: true, user_lastname: true },
+                select: { user_name: true, user_lastname: true, user_image: true},
                 where: { user_id: availableCarrier[i].user_user_id }
             })
         carrierDetails.push(element)
