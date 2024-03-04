@@ -13,7 +13,7 @@ export class UserController {
     return this.userService.findAllUser();
   }
 
-  @Get(':user_email')
+  @Get(':user_id')
   findAvailableCarrier(@Body() user_email:string){
   return this.userService.findOneByEmail(user_email);
   }
