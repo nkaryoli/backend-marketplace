@@ -14,9 +14,13 @@ export class UserService {
     private readonly userRepository: Repository<User>,
   ) {}
 
-create (CreateUserDto: CreateUserDto){
-  return this.userRepository.save(CreateUserDto);
-}
+  create (CreateUserDto: CreateUserDto){
+    return this.userRepository.save(CreateUserDto);
+  }
+
+  async findOneByEmail(email: string): Promise<User | undefined> {
+    return this.userRepository.findOne({ where: { user_email: email } });
+  }
 
   async findOneById(userId: number) {
     const user = await this.userRepository.find({ where: { user_id: userId } });
