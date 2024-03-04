@@ -14,8 +14,8 @@ export class UserController {
   }
 
   @Get(':user_id')
-  findAvailableCarrier(@Body() user_email:string){
-  return this.userService.findOneByEmail(user_email);
+  findAvailableCarrier(@Body() user_id:number){
+  return this.userService.findOneByEmail(user_id);
   }
 }
 
