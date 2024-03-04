@@ -8,6 +8,11 @@ import { UserService } from './user.service';
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
+  @Get()
+  findAllUser() {
+    return this.userService.findAllUser();
+  }
+  
   @Get(':userEmail')
   findAvailableCarrier(@Body() userEmail:string){
   return this.userService.findOneByEmail(userEmail);

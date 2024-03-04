@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 // import { UpdateUserDto } from './dto/update-user.dto';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -19,7 +19,11 @@ create (CreateUserDto: CreateUserDto){
 }
 
   async findOneByEmail(userEmail: string): Promise<User | undefined> {
-    return this.userRepository.findOne({ where: { user_email: userEmail } });
+    const user = await this.userRepository.findOne({ where: { user_email: userEmail } });
+    if(!user){
+      throw new HttpException(`No User found`, 404);
+    }
+    return user;
   }
   
   async findAllUser () {
