@@ -18,8 +18,8 @@ create (CreateUserDto: CreateUserDto){
   return this.userRepository.save(CreateUserDto);
 }
 
-  async findOneByEmail(email: string): Promise<User | undefined> {
-    return this.userRepository.findOne({ where: { user_email: email } });
+  async findOneByEmail(userEmail: string): Promise<User | undefined> {
+    return this.userRepository.findOne({ where: { user_email: userEmail } });
   }
   
   async findAllUser () {
