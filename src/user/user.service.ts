@@ -18,7 +18,7 @@ create (CreateUserDto: CreateUserDto){
   return this.userRepository.save(CreateUserDto);
 }
 
-  async findOneByEmail(user_id: number) {
+  async findOneById(user_id: number) {
     const user = await this.userRepository.findOne({ where: { user_id: user_id } });
     if(!user){
       throw new HttpException(`No User found`, 404);

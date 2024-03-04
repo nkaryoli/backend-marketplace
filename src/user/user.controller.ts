@@ -1,4 +1,4 @@
-import { Body, Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { UserService } from './user.service';
 // import { CreateUserDto } from './dto/create-user.dto';
 // import { UpdateUserDto } from './dto/update-user.dto';
@@ -14,7 +14,7 @@ export class UserController {
   }
 
   @Get(':user_id')
-  findAvailableCarrier(@Body() user_id:number){
+  findAvailableCarrier(@Param('user_id') user_id:number){
   return this.userService.findOneByEmail(user_id);
   }
 }
