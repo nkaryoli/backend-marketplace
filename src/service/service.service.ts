@@ -30,11 +30,16 @@ async findAvailableCarrier (searchService: SearchServiceDto) {
     if (availableCarrier) {
         const carrierDetails = []
         for (let i=0; i < availableCarrier.length; i++){
+            const rating = availableCarrier[i].average_rating;
             const element = await this.userRepository.find({
                 select: { user_name: true, user_lastname: true, user_image: true},
                 where: { user_id: availableCarrier[i].user_user_id }
             })
-        carrierDetails.push(element)
+            const carrier = {
+                rating: rating,
+                element: element
+            };
+            carrierDetails.push(carrier)
         }
         return carrierDetails
     } else {
