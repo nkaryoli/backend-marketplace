@@ -32,7 +32,7 @@ export class Carrier {
 
   @OneToMany(() => Rating, (rating) => rating.carrier)
   @JoinColumn()
-  average_rating: Rating[];
+  average_rating: number;
 
   // @OneToOne(() => User, (user) => user.carrier)
   // @JoinColumn()
