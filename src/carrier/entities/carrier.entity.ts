@@ -30,13 +30,8 @@ export class Carrier {
   @Column()
   van_rate: number;
 
-  @OneToMany(() => Rating, (rating) => rating.carrier)
   @JoinColumn()
   average_rating: number;
-
-  // @OneToOne(() => User, (user) => user.carrier)
-  // @JoinColumn()
-  // user_user_id: User;
 
   @Column()
   user_user_id: number;
