@@ -30,7 +30,7 @@ export class Carrier {
   @Column()
   van_rate: number;
 
-  @JoinColumn()
+  @Column()
   average_rating: number;
 
   @Column()
