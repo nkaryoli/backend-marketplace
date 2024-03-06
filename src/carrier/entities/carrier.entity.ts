@@ -1,14 +1,9 @@
-// import { User } from "src/user/entities/user.entity";
-import { Rating } from 'src/rating/entities/rating.entity';
 import { Service } from 'src/service/entities/service.entity';
-// import { User } from 'src/user/entities/user.entity';
 import { Vehicle } from 'src/vehicle/entities/vehicle.entity';
 import {
   Column,
   Entity,
-  JoinColumn,
   OneToMany,
-  // OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 

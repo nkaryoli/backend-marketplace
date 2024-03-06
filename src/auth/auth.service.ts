@@ -1,7 +1,6 @@
 import { BadRequestException, Injectable, UnauthorizedException } from '@nestjs/common';
 import { UserService } from 'src/user/user.service';
 import { RegisterDto } from './dto/register.dto';
-import { User } from 'src/user/entities/user.entity';
 import * as bcrypt from 'bcrypt';
 import { LoginDto } from './dto/login.dto';
 import {JwtService } from '@nestjs/jwt' 
@@ -58,9 +57,6 @@ return {
 };
   }
 
-// async profile({ email, role }: { email: string; role: string }) {
-// return await this.usersService.findOneByEmail(email);
-// }
 }
 
 
