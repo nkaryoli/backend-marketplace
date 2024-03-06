@@ -19,7 +19,6 @@ export class ServiceController {
   return this.serviceService.findAvailableCarrier(request.query as unknown as SearchServiceDto);
   }
 
-
   @Post()
   createService(@Body() createService: CreateServiceDto){
   return this.serviceService.createService(createService);
